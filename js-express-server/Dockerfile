@@ -4,13 +4,10 @@ FROM node:14
 WORKDIR /usr/src/app
 
 # Copy package.json and yarn.lock
-COPY package.json yarn.lock ./
+COPY package*.json /app
 
 # Install dependencies
 RUN yarn install
-
-# Copy the rest of the application code
-COPY . .
 
 # Expose the port the app runs on
 EXPOSE 8001
